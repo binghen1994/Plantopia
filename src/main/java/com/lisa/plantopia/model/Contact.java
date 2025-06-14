@@ -1,0 +1,32 @@
+package com.lisa.plantopia.model;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class Contact {
+    @NotBlank(message = "Name is required")
+    @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
+    private String name;
+
+    @NotBlank(message = "Mobile number is required")
+    @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
+    private String mobileNum;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email address")
+    private String email;
+
+    @NotBlank(message = "Subject is required")
+    @Size(min = 5, message = "Subject must be at least 5 characters")
+    private String subject;
+
+    @NotBlank(message = "Subject is required")
+    @Size(min = 5, message = "Subject must be at least 5 characters")
+    private String message;
+
+
+}
