@@ -43,7 +43,7 @@ public class ContactController {
         contactService.saveMessage(contact);
         contactService.setCounter(contactService.getCounter() + 1);
         log.info("Number of times contact form submitted : " + contactService.getCounter());
-        redirectAttributes.addFlashAttribute("successMessage", "message sent successfully!");
+        redirectAttributes.addFlashAttribute("successMessage", "Info saved successfully!");
         return new ModelAndView("redirect:/contact");
     }
 }
