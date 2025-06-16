@@ -38,7 +38,7 @@ public class ContactController {
     public ModelAndView saveMessage(@Valid @ModelAttribute("contact") Contact contact, Errors errors, RedirectAttributes redirectAttributes) {
         if (errors.hasErrors()) {
             log.error("Contact form validation failed due to : " + errors.toString());
-            return new ModelAndView("contact.html");
+            return new ModelAndView("contact");
         }
         contactService.saveMessage(contact);
         contactService.setCounter(contactService.getCounter() + 1);
